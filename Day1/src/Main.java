@@ -6,8 +6,9 @@ public class Main {
 
         FirstPart ch = new FirstPart();
 
+        //First part
         try{
-            File file = new File("D:\\Nikolka_skola\\Programování\\Java\\AdventOfCode2023\\Day1_input");
+            File file = new File("D:\\Nikolka_skola\\Programování\\Java\\AdventOfCode2023\\Inputs\\MyInput.txt");
             BufferedReader reader = new BufferedReader(new FileReader(file));
             String line;
             while((line = reader.readLine()) != null){
@@ -21,15 +22,15 @@ public class Main {
             e.printStackTrace();
         }
 
-        //First part
+
         ch.makeNumber();
         System.out.println(ch.count());
 
         //Second part
         SecondPart s = new SecondPart();
         s.addedHash();
-        BufferedReader reade = new BufferedReader(new FileReader("D:\\Nikolka_skola\\Programování\\Java\\AdventOfCode2023\\Day1_input"));
-        BufferedWriter writ = new BufferedWriter(new FileWriter("D:\\Nikolka_skola\\Programování\\Java\\AdventOfCode2023\\MyInput"));
+        BufferedReader reade = new BufferedReader(new FileReader("D:\\Nikolka_skola\\Programování\\Java\\AdventOfCode2023\\Inputs\\MyInput.txt"));
+        BufferedWriter writ = new BufferedWriter(new FileWriter("D:\\Nikolka_skola\\Programování\\Java\\AdventOfCode2023\\Inputs\\MyInput1after.txt"));
         String lin;
         while ((lin = reade.readLine()) != null) {
             s.convert(lin);
@@ -37,7 +38,7 @@ public class Main {
         }
 
         try{
-            File fil = new File("D:\\Nikolka_skola\\Programování\\Java\\AdventOfCode2023\\MyInput");
+            File fil = new File("D:\\Nikolka_skola\\Programování\\Java\\AdventOfCode2023\\Inputs\\MyInput1after.txt");
             s.writeFile(fil);
             BufferedReader reader = new BufferedReader(new FileReader(fil));
             String line;

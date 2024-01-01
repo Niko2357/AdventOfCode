@@ -6,16 +6,21 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-
-
 public class SecondPart extends FirstPart {
     ArrayList<String> expression = new ArrayList<>();
 
-    Map<String, String> num = new HashMap<>();
+    HashMap<String, String> num = new HashMap<>();
 
-    public SecondPart() {
+    //Constructor
+    public SecondPart() throws IOException{
     }
 
+    /**
+     * Rewrites file from written numbers into digit numbers.
+     *
+     * @param a File to rewrite
+     * @throws IOException
+     */
     public void writeFile(File a)throws IOException {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(a));
@@ -29,6 +34,10 @@ public class SecondPart extends FirstPart {
         }
     }
 
+    /**
+     * Compiles written numbers into digit numbers.
+     * While counting on cases like 'nineight' or 'sevenine' :( .
+     */
     public void addedHash(){
         num.put("one", "o1e");
         num.put("two", "t2o");
@@ -41,6 +50,12 @@ public class SecondPart extends FirstPart {
         num.put("nine", "n9e");
     }
 
+    /**
+     * Replaces word into number according to 'num' list.
+     *
+     * @param a
+     * @return String
+     */
     public String convert(String a){
         for(String word: num.keySet()){
             a = a.replace(word, num.get(word));
@@ -59,7 +74,13 @@ public class SecondPart extends FirstPart {
     int w;
     int r;
 
-    public void checkFirstNumber(String a) throws Exception{
+    /**
+     * Separates String into single characters.
+     * Selects a digit and adds it into list 'digit1'.
+     *
+     * @param a One line of input file.
+     */
+    public void checkFirstNumber(String a) {
         char[] word = a.toCharArray();
         boolean num = false;
         for(int u = 0; u < word.length; u++){
@@ -74,6 +95,13 @@ public class SecondPart extends FirstPart {
         }
     }
 
+    /**
+     * Separates String into single characters.
+     * Searches for a digit from the back of array and
+     * adds it into list called 'digit2'.
+     *
+     * @param a One line of input file.
+     */
     public void checkLastNumber(String a) {
         char[] word = a.toCharArray();
         boolean num = false;
@@ -89,8 +117,9 @@ public class SecondPart extends FirstPart {
         }
     }
 
-
-
+    /**
+     * Creates two-digit number that is added into list named 'numbers'.
+     */
     public void makeNumber() {
         int k = 0;
         for (int i = 0; i < Math.min(digid1.size(), digid2.size()); i++) {
@@ -99,8 +128,12 @@ public class SecondPart extends FirstPart {
         }
     }
 
-
-    public Integer count(){
+    /**
+     * Sums up all two-digit numbers in 'numbers' list.
+     *
+     * @return int Sum of numbers.
+     */
+    public int count(){
         int sum = 0;
         for(int i = 0; i < numbers.size(); i++){
             sum += numbers.get(i);
@@ -109,6 +142,7 @@ public class SecondPart extends FirstPart {
     }
 
 
+    //Getters and Setters
     public ArrayList<String> getExpression() {
         return expression;
     }

@@ -1,6 +1,5 @@
 
 import java.util.ArrayList;
-
 public class FirstPart {
 
     char[] word;
@@ -10,7 +9,13 @@ public class FirstPart {
     int w;
     int r;
 
-    public void checkFirstNumber(String a) throws Exception{
+    /**
+     * Separates String into single characters.
+     * Selects first digit it finds and adds it into list 'digit1'.
+     *
+     * @param a One line of input file.
+     */
+    public void checkFirstNumber(String a) {
         char[] word = a.toCharArray();
         boolean num = false;
         for(int u = 0; u < word.length; u++){
@@ -25,6 +30,13 @@ public class FirstPart {
         }
     }
 
+    /**
+     * Separates String into single characters.
+     * Searches for a digit from the back of array and
+     * adds it into list called 'digit2'.
+     *
+     * @param a One line of input file.
+     */
     public void checkLastNumber(String a) {
         char[] word = a.toCharArray();
         boolean num = false;
@@ -40,8 +52,9 @@ public class FirstPart {
         }
     }
 
-
-
+    /**
+     * Creates two-digit number that is added into list named 'numbers'.
+     */
     public void makeNumber() {
         int k = 0;
         for (int i = 0; i < Math.min(digid1.size(), digid2.size()); i++) {
@@ -50,8 +63,12 @@ public class FirstPart {
         }
     }
 
-
-    public Integer count(){
+    /**
+     * Sums up all two-digit numbers in 'numbers' list.
+     *
+     * @return int Sum of numbers.
+     */
+    public int count(){
         int sum = 0;
         for(int i = 0; i < numbers.size(); i++){
             sum += numbers.get(i);
@@ -59,8 +76,11 @@ public class FirstPart {
         return sum;
     }
 
+    //Constructor
     public FirstPart() {
     }
+
+    //Getters and Setters
 
     public char[] getWord() {
         return word;
