@@ -25,10 +25,10 @@ public class Cards {
         winning = new ArrayList<>();
         nums = new ArrayList<>();
         String[] parts = a.split("\\D+");
-        for (int j = 1; j < 12; j++) {
+        for (int j = 2; j < 12; j++) {
                 winning.add(parts[j]);
             }
-        for (int p = 12; p < 36; p++) {
+        for (int p = 12; p < 37; p++) {
                 nums.add(parts[p]);
             }
     }
